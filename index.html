@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00xCanelo | Security Research Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="glitch-load" data-text="00xCanelo">00xCanelo</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-status">INITIALIZING SYSTEM</span>
+                <span class="loading-percent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="grid-background"></div>
+    <div class="scan-line"></div>
+    <div class="vignette"></div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="glitch" data-text="00xCanelo">00xCanelo</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
+                <li><a href="#terminal" class="nav-link" data-text="Terminal">Terminal</a></li>
+                <li><a href="#writeups" class="nav-link" data-text="Writeups">Writeups</a></li>
+                <li><a href="#tools" class="nav-link" data-text="Tools">Tools</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-ascii">
+                <pre class="ascii-art"></pre>
+            </div>
+            <div class="terminal-prompt">
+                <span class="prompt-user">root@00xCanelo</span>
+                <span class="prompt-separator">:</span>
+                <span class="prompt-dir">~</span>
+                <span class="prompt-symbol">$</span>
+                <span class="typing-text"></span>
+                <span class="cursor-blink">█</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="glitch-large" data-text="OFFENSIVE">OFFENSIVE</span>
+                <span class="glitch-large" data-text="SECURITY">SECURITY</span>
+                <span class="glitch-large" data-text="RESEARCH">RESEARCH</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typewriter-subtitle"></span>
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-width="2" />
+                            <path d="M2 17L12 22L22 17" stroke-width="2" />
+                            <path d="M2 12L12 17L22 12" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <span class="stat-number" data-target="156">0</span>
+                    <span class="stat-label">CTF Challenges</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path
+                                d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                                stroke-width="2" />
+                            <path d="M14 2V8H20" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <span class="stat-number" data-target="67">0</span>
+                    <span class="stat-label">Writeups</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="2" y="7" width="20" height="14" rx="2" stroke-width="2" />
+                            <path
+                                d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                    <span class="stat-number" data-target="23">0</span>
+                    <span class="stat-label">Tools Released</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#writeups" class="cta-button cta-primary">
+                    <span>Explore Writeups</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7 10L13 10M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+                <a href="#terminal" class="cta-button cta-secondary">
+                    <span>Open Terminal</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 17L10 11L4 5" stroke-width="2" />
+                        <path d="M12 19L20 19" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-code">
+                <div class="code-snippet" style="--delay: 0s">
+                    <code>exploit.py</code>
+                </div>
+                <div class="code-snippet" style="--delay: 0.5s">
+                    <code>0day.c</code>
+                </div>
+                <div class="code-snippet" style="--delay: 1s">
+                    <code>pwn.sh</code>
+                </div>
+                <div class="code-snippet" style="--delay: 1.5s">
+                    <code>reverse.asm</code>
+                </div>
+                <div class="code-snippet" style="--delay: 2s">
+                    <code>crypto.sage</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="terminal" class="section terminal-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    Interactive Terminal
+                    <span class="title-bracket">]</span>
+                </h2>
+                <p class="section-subtitle">Try commands: help, whoami, skills, github, medium</p>
+            </div>
+
+            <div class="interactive-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button red"></span>
+                        <span class="terminal-button yellow"></span>
+                        <span class="terminal-button green"></span>
+                    </div>
+                    <div class="terminal-title">00xCanelo@security ~ bash</div>
+                    <div class="terminal-actions">
+                        <button class="terminal-action" id="clear-terminal">Clear</button>
+                    </div>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">root@00xCanelo:~$</span>
+                        <span class="terminal-welcome">Welcome to 00xCanelo Security Research Terminal</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">root@00xCanelo:~$</span>
+                        <span class="terminal-text">Type 'help' for available commands</span>
+                    </div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">root@00xCanelo:~$</span>
+                    <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="writeups" class="section writeups">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    Recent Writeups
+                    <span class="title-bracket">]</span>
+                </h2>
+                <p class="section-subtitle">Deep dive analysis and exploitation techniques</p>
+            </div>
+
+            <div class="writeup-timeline">
+                <article class="writeup-card" data-category="web">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-tags">
+                            <span class="card-tag">Web Exploitation</span>
+                            <span class="card-difficulty hard">Hard</span>
+                        </div>
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2" />
+                                <path
+                                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Prototype Pollution to RCE Chain</h3>
+                    <p class="card-description">Exploitation walkthrough of a Node.js Express application vulnerable to
+                        prototype pollution, demonstrating gadget chain discovery and template injection escalation to
+                        achieve remote code execution.</p>
+                    <div class="card-techniques">
+                        <span class="technique">Prototype Pollution</span>
+                        <span class="technique">Template Injection</span>
+                        <span class="technique">RCE</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" />
+                                <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" />
+                                <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" />
+                            </svg>
+                            Jan 28, 2026
+                        </span>
+                        <span class="card-ctf">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            HackTheBox
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://medium.com/@00xCanelo" class="read-more" target="_blank">
+                            Read on Medium
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-width="2" />
+                                <polyline points="15 3 21 3 21 9" stroke-width="2" />
+                                <line x1="10" y1="14" x2="21" y2="3" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="writeup-card" data-category="binary">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-tags">
+                            <span class="card-tag">Binary Exploitation</span>
+                            <span class="card-difficulty hard">Hard</span>
+                        </div>
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="card-title">V8 Heap Exploitation: UAF to Arbitrary R/W</h3>
+                    <p class="card-description">Deep analysis of a use-after-free vulnerability in Chrome's V8 engine,
+                        utilizing heap feng shui techniques and type confusion primitives to achieve arbitrary
+                        read/write capabilities.</p>
+                    <div class="card-techniques">
+                        <span class="technique">Heap Feng Shui</span>
+                        <span class="technique">UAF</span>
+                        <span class="technique">Type Confusion</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" />
+                                <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" />
+                                <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" />
+                            </svg>
+                            Jan 15, 2026
+                        </span>
+                        <span class="card-ctf">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            Google CTF
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://medium.com/@00xCanelo" class="read-more" target="_blank">
+                            Read on Medium
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-width="2" />
+                                <polyline points="15 3 21 3 21 9" stroke-width="2" />
+                                <line x1="10" y1="14" x2="21" y2="3" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="writeup-card" data-category="crypto">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-tags">
+                            <span class="card-tag">Cryptography</span>
+                            <span class="card-difficulty medium">Medium</span>
+                        </div>
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="card-title">RSA Lattice Attacks: LLL & Coppersmith</h3>
+                    <p class="card-description">Breaking weak RSA implementations through Coppersmith's attack and LLL
+                        lattice reduction, demonstrating how mathematical constraints can lead to full key recovery.</p>
+                    <div class="card-techniques">
+                        <span class="technique">Lattice Reduction</span>
+                        <span class="technique">Coppersmith</span>
+                        <span class="technique">Number Theory</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" />
+                                <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" />
+                                <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" />
+                            </svg>
+                            Dec 30, 2025
+                        </span>
+                        <span class="card-ctf">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            CryptoHack
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://medium.com/@00xCanelo" class="read-more" target="_blank">
+                            Read on Medium
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-width="2" />
+                                <polyline points="15 3 21 3 21 9" stroke-width="2" />
+                                <line x1="10" y1="14" x2="21" y2="3" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="writeup-card" data-category="web">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-tags">
+                            <span class="card-tag">Web Exploitation</span>
+                            <span class="card-difficulty medium">Medium</span>
+                        </div>
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2" />
+                                <path
+                                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Second-Order SQLi: From Profile to Admin</h3>
+                    <p class="card-description">Detailed exploitation of a second-order SQL injection vulnerability
+                        through user profile fields, leading to complete database extraction and administrative
+                        privilege escalation.</p>
+                    <div class="card-techniques">
+                        <span class="technique">SQL Injection</span>
+                        <span class="technique">Privilege Escalation</span>
+                        <span class="technique">Data Exfiltration</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-date">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" stroke-width="2" />
+                                <line x1="8" y1="2" x2="8" y2="6" stroke-width="2" />
+                                <line x1="3" y1="10" x2="21" y2="10" stroke-width="2" />
+                            </svg>
+                            Dec 18, 2025
+                        </span>
+                        <span class="card-ctf">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            PortSwigger Labs
+                        </span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://medium.com/@00xCanelo" class="read-more" target="_blank">
+                            Read on Medium
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke-width="2" />
+                                <polyline points="15 3 21 3 21 9" stroke-width="2" />
+                                <line x1="10" y1="14" x2="21" y2="3" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="view-all-container">
+                <a href="https://medium.com/@00xCanelo" class="view-all-btn" target="_blank">
+                    <span>View All Writeups on Medium</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <line x1="5" y1="12" x2="19" y2="12" stroke-width="2" />
+                        <polyline points="12 5 19 12 12 19" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="section tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    Security Arsenal
+                    <span class="title-bracket">]</span>
+                </h2>
+                <p class="section-subtitle">Open-source research and exploitation frameworks</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-glow"></div>
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke-width="2" />
+                                <path d="M2 17L12 22L22 17" stroke-width="2" />
+                                <path d="M2 12L12 17L22 12" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="tool-status">
+                            <span class="status-dot active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="tool-title">ProtoScanner</h3>
+                    <p class="tool-description">Automated prototype pollution detection framework for Node.js
+                        applications with intelligent gadget chain discovery and exploit generation.</p>
+                    <div class="tool-stats">
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>1.2k</span>
+                        </div>
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>342</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">Node.js</span>
+                        <span class="tool-tag">SAST</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://github.com/00xCanelo" class="tool-link" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-glow"></div>
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2" />
+                                <path d="M3 9h18M9 21V9" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="tool-status">
+                            <span class="status-dot active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="tool-title">HeapViz</h3>
+                    <p class="tool-description">Real-time heap visualization and analysis tool for browser exploitation,
+                        providing interactive debugging for UAF and type confusion vulnerabilities.</p>
+                    <div class="tool-stats">
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>856</span>
+                        </div>
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>189</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tool-tag">C++</span>
+                        <span class="tool-tag">V8</span>
+                        <span class="tool-tag">Debugging</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://github.com/00xCanelo" class="tool-link" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-glow"></div>
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="tool-status">
+                            <span class="status-dot active"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="tool-title">CryptoBreaker</h3>
+                    <p class="tool-description">Comprehensive cryptanalysis toolkit featuring implementations of
+                        advanced attacks including lattice-based methods, padding oracles, and timing attacks.</p>
+                    <div class="tool-stats">
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>2.1k</span>
+                        </div>
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>567</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">Sage</span>
+                        <span class="tool-tag">Crypto</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://github.com/00xCanelo" class="tool-link" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-glow"></div>
+                    <div class="tool-header">
+                        <div class="tool-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2" />
+                                <path d="M12 6v6l4 2" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="tool-status">
+                            <span class="status-dot"></span>
+                            <span>Beta</span>
+                        </div>
+                    </div>
+                    <h3 class="tool-title">RaceHunter</h3>
+                    <p class="tool-description">Advanced TOCTOU and race condition detector with automated exploit
+                        generation capabilities, utilizing symbolic execution and concurrency analysis.</p>
+                    <div class="tool-stats">
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>634</span>
+                        </div>
+                        <div class="tool-stat">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                    stroke-width="2" />
+                            </svg>
+                            <span>125</span>
+                        </div>
+                    </div>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Rust</span>
+                        <span class="tool-tag">Concurrency</span>
+                        <span class="tool-tag">Fuzzing</span>
+                    </div>
+                    <div class="tool-links">
+                        <a href="https://github.com/00xCanelo" class="tool-link" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        About 00xCanelo
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="about-text">
+                        <p>Senior Offensive Security Researcher with expertise in web application exploitation, binary
+                            analysis, and source code auditing. Specialized in discovering subtle logic flaws, type
+                            confusion vulnerabilities, and novel attack primitives through deep architectural analysis.
+                        </p>
+                        <p>Active CTF competitor with top rankings in major competitions including DEFCON, Google CTF,
+                            and HackTheBox. Passionate about knowledge sharing through detailed technical writeups that
+                            explore the "why" behind exploitation techniques, not just the "how".</p>
+                        <p>Contributing to the security community through open-source tool development and maintaining
+                            vulnerability research frameworks. When not breaking things, I'm building tools to help
+                            others break things better.</p>
+                    </div>
+
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke-width="2" />
+                                    <path
+                                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>Web Exploitation</h3>
+                            <ul>
+                                <li>Prototype Pollution</li>
+                                <li>Template Injection</li>
+                                <li>SQL/NoSQL Injection</li>
+                                <li>XSS & CSRF</li>
+                            </ul>
+                        </div>
+
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>Binary Exploitation</h3>
+                            <ul>
+                                <li>Heap Exploitation</li>
+                                <li>Use-After-Free</li>
+                                <li>Type Confusion</li>
+                                <li>ROP Chains</li>
+                            </ul>
+                        </div>
+
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                                        stroke-width="2" />
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                                        stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>Source Analysis</h3>
+                            <ul>
+                                <li>Static Analysis (SAST)</li>
+                                <li>Code Auditing</li>
+                                <li>Data Flow Analysis</li>
+                                <li>Vulnerability Research</li>
+                            </ul>
+                        </div>
+
+                        <div class="expertise-card">
+                            <div class="expertise-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>Cryptography</h3>
+                            <ul>
+                                <li>Lattice Attacks</li>
+                                <li>Padding Oracles</li>
+                                <li>Side-Channel Analysis</li>
+                                <li>Protocol Breaking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    Get In Touch
+                    <span class="title-bracket">]</span>
+                </h2>
+                <p class="section-subtitle">Let's collaborate on security research</p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="https://github.com/00xCanelo" class="contact-card" target="_blank">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>00xCanelo</p>
+                    <span class="contact-link">github.com/00xCanelo →</span>
+                </a>
+
+                <a href="https://medium.com/@00xCanelo" class="contact-card" target="_blank">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                        </svg>
+                    </div>
+                    <h3>Medium</h3>
+                    <p>@00xCanelo</p>
+                    <span class="contact-link">medium.com/@00xCanelo →</span>
+                </a>
+
+                <a href="mailto:00xcanelo@security.com" class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                stroke-width="2" />
+                            <polyline points="22,6 12,13 2,6" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Direct Contact</p>
+                    <span class="contact-link">00xcanelo@security.com →</span>
+                </a>
+
+                <a href="https://twitter.com/00xCanelo" class="contact-card" target="_blank">
+                    <div class="contact-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </div>
+                    <h3>Twitter</h3>
+                    <p>@00xCanelo</p>
+                    <span class="contact-link">twitter.com/00xCanelo →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="glitch" data-text="00xCanelo">00xCanelo</span>
+                    </div>
+                    <p>&copy; 2026 00xCanelo Security Research. All writeups for educational purposes only.</p>
+                    <p class="footer-disclaimer">Authorized scope only • Responsible disclosure • CTF and lab
+                        environments</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Research</h4>
+                        <a href="https://medium.com/@00xCanelo" target="_blank">Writeups</a>
+                        <a href="https://github.com/00xCanelo" target="_blank">Tools</a>
+                        <a href="#about">About</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/00xCanelo" target="_blank">GitHub</a>
+                        <a href="https://medium.com/@00xCanelo" target="_blank">Medium</a>
+                        <a href="https://twitter.com/00xCanelo" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
