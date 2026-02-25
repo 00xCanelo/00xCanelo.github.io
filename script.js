@@ -183,7 +183,7 @@ function typeWriter() {
 // Subtitle Typewriter
 const subtitles = [
     'CTF Player • Source Code Auditor • 0day Hunter',
-    'Breaking Things Since 2020',
+    'Breaking Things Since 2025',
     'Prototype Pollution Specialist',
     'Heap Feng Shui Master'
 ];
